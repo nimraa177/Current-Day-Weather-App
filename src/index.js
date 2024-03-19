@@ -1,35 +1,33 @@
-function displayTemperature(response) {
+function refreshWeather(response) {
+  //temperature data
   let temperatureElement = document.querySelector("#current-temperature");
-  let temperature = Math.round(response.data.temperature.current);
+  let temperature = response.data.temperature.current;
+  temperatureElement.innerHTML = Math.round(temperature);
+  //city data
   let cityElement = document.querySelector("#current-city");
   cityElement.innerHTML = response.data.city;
-  temperatureElement.innerHTML = temperature;
+  //description data
+  let descriptionElement = document.querySelector("#description");
+  descriptionElement.innerHTML = response.data.condition.description;
+  //Humidity Data
+  let humidityElement = document.querySelector("#Humidity-value");
+  humidityElement.innerHTML = response.data.temperature.humidity;
+  //Wind data
+  let windElement = document.querySelector("#Wind-value");
+  windElement.innerHTML = response.data.wind.speed;
+  //Time
+  let timeElement = document.querySelector("#current-date");
+  //Parsing the date Sun Mar 17 2024 23:01:02 GMT-0500
+  let date = new Date(response.data.time * 1000);
+  timeElement.innerHTML = response.data.time;
+  timeElement.innerHTML = formatDate(date);
+
+  console.log(response.data);
 }
-
-function search(event) {
-  event.preventDefault();
-  let searchInputElement = document.querySelector("#search-input");
-  let city = searchInputElement.value;
-
-  let apiKey = "b2a5adcct04b33178913oc335f405433";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-
-  axios.get(apiUrl).then(displayTemperature);
-}
-
+//Function to format date
 function formatDate(date) {
   let minutes = date.getMinutes();
   let hours = date.getHours();
-  let day = date.getDay();
-
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-
   let days = [
     "Sunday",
     "Monday",
@@ -39,15 +37,26 @@ function formatDate(date) {
     "Friday",
     "Saturday",
   ];
-
-  let formattedDay = days[day];
-  return `${formattedDay} ${hours}:${minutes}`;
+  let day = days[date.getDay()];
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${day} ${hours}:${minutes}`;
 }
 
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", search);
+function searchCity(city) {
+  let apiKey = "0c309aff29364454354a4b94ab9ot995";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(refreshWeather); //get the data and call function
+}
 
-let currentDateELement = document.querySelector("#current-date");
-let currentDate = new Date();
+function handleSearch(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-input");
+  searchCity(searchInput.value);
+}
 
-currentDateELement.innerHTML = formatDate(currentDate);
+let searchFormElement = document.querySelector("#search-form");
+searchFormElement.addEventListener("submit", handleSearch);
+searchCity("Islamabad");

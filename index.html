@@ -11,7 +11,7 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/styles.css" />
-    <title>My weather application</title>
+    <title>Weather Forecast</title>
   </head>
   <body>
     <div class="weather-app">
@@ -29,22 +29,27 @@
       </header>
       <main>
         <div class="current-weather">
-          <div>
-            <h1 class="current-city" id="current-city">Paris</h1>
-            <p class="current-details">
-              <span id="current-date"></span>, moderate rain <br />
-              Humidity: <strong>87%</strong>, Wind: <strong>7.2km/h</strong>
-            </p>
-          </div>
           <div class="current-temperature">
-            <span class="current-temperature-icon">☀️</span
-            ><span class="current-temperature-value" id="current-temperature"
-              >24</span
+            <span class="current-temperature-icon">☀️</span>
+            <span
+              class="current-temperature-value"
+              id="current-temperature"
+            ></span
             ><span class="current-temperature-unit">°C</span>
+            <h1 class="current-city" id="current-city"></h1>
+          </div>
+          <div class="Weather-details-1">
+            <h1 class="Current-date" id="current-date">
+              <p class="description" id="description"></p>
+              <p class="Humidity-details" id="Humidity-value">
+                <strong>%</strong>
+              </p>
+              <p class="wind-details" id="Wind-value"><strong>km/h</strong></p>
+            </h1>
           </div>
         </div>
       </main>
-      <footer>
+      <footer class="Footer-details">
         <p>
           This project was coded by
           <a href="https://github.com/nimraa177" target="_blank">Nimra</a>
