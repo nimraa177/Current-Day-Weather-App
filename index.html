@@ -30,22 +30,122 @@
       <main>
         <div class="current-weather">
           <div class="current-temperature">
-            <span class="current-temperature-icon">☀️</span>
-            <span
-              class="current-temperature-value"
-              id="current-temperature"
-            ></span
-            ><span class="current-temperature-unit">°C</span>
+            <span class="current-temperature-icon" id="current-temperature-icon"
+              >☀️</span
+            >
+            <span class="current-temperature-value" id="current-temperature">
+            </span>
+            <span class="current-temperature-unit">°C</span>
             <h1 class="current-city" id="current-city"></h1>
           </div>
-          <div class="Weather-details-1">
-            <h1 class="Current-date" id="current-date">
-              <p class="description" id="description"></p>
-              <p class="Humidity-details" id="Humidity-value">
-                <strong>%</strong>
-              </p>
-              <p class="wind-details" id="Wind-value"><strong>km/h</strong></p>
-            </h1>
+          <div
+            class="Weather details"
+            style="
+              float: left;
+              border: 1px solid goldenrod;
+              border-radius: 8px;
+              background: #ffffff78;
+              color: black;
+              width: 160px;
+              height: 80px;
+              text-align: center;
+              padding: 10px;
+              font-weight: bold;
+            "
+          >
+            <span style="font-size: 1.6em; color: black">🌡️</span>FEELS LIKE
+            <div class="test" id="Feels-like"></div>
+          </div>
+          <div
+            class=""
+            style="
+              border: 1px solid goldenrod;
+              border-radius: 8px;
+              background: #ffffff78;
+              color: black;
+              width: 160px;
+              height: 80px;
+              text-align: center;
+              padding: 10px;
+              float: right;
+              font-weight: bold;
+            "
+          >
+            <span style="font-size: 1.6em; color: black">🗒️</span>CONDITION
+            <div class="test" id="description"></div>
+          </div>
+          <div
+            class=""
+            style="
+              border: 1px solid goldenrod;
+              border-radius: 8px;
+              background: #ffffff78;
+              color: black;
+              width: 160px;
+              height: 80px;
+              text-align: center;
+              padding: 10px;
+              float: left;
+              margin-top: 15px;
+              font-weight: bold;
+            "
+          >
+            <span style="font-size: 1.6em; color: black">💧</span>HUMIDITY
+            <div class="" id="Humidity-value"></div>
+          </div>
+          <div
+            class=""
+            style="
+              border: 1px solid goldenrod;
+              border-radius: 8px;
+              background: #ffffff78;
+              color: black;
+              width: 160px;
+              height: 80px;
+              text-align: center;
+              padding: 10px;
+              float: right;
+              margin-top: 15px;
+              font-weight: bold;
+            "
+          >
+            <span style="font-size: 1.6em; color: black">🍃</span>WIND SPEED
+            <div class="test" id="Wind-value"></div>
+          </div>
+        </div>
+        <div class="Weather-forecast" id="forecast">
+          <span style="font-size: 2em; color: black">⏱️</span>WEEKLY FORECAST
+          <div class="forecast-details" style="display: flex">
+            <div class="weather-forecast-day">
+              <div class="weather-forecast-date">Wed</div>
+              <div class="weather-forecast-icon" style="font-size: 2em">🌤️</div>
+              <div class="weather-forecast-temperatures">
+                <div class="weather-forecast-temperature">
+                  <strong>18º</strong>
+                </div>
+                <div class="weather-forecast-temperature">9º</div>
+              </div>
+            </div>
+            <div class="weather-forecast-day">
+              <div class="weather-forecast-date">Thurs</div>
+              <div class="weather-forecast-icon" style="font-size: 2em">☀️</div>
+              <div class="weather-forecast-temperatures">
+                <div class="weather-forecast-temperature">
+                  <strong>18º</strong>
+                </div>
+                <div class="weather-forecast-temperature">9º</div>
+              </div>
+            </div>
+            <div class="weather-forecast-day">
+              <div class="weather-forecast-date">Fri</div>
+              <div class="weather-forecast-icon" style="font-size: 2em">🌤️</div>
+              <div class="weather-forecast-temperatures">
+                <div class="weather-forecast-temperature">
+                  <strong>18º</strong>
+                </div>
+                <div class="weather-forecast-temperature">9º</div>
+              </div>
+            </div>
           </div>
         </div>
       </main>

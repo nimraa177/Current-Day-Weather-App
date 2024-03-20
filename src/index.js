@@ -11,37 +11,17 @@ function refreshWeather(response) {
   descriptionElement.innerHTML = response.data.condition.description;
   //Humidity Data
   let humidityElement = document.querySelector("#Humidity-value");
-  humidityElement.innerHTML = response.data.temperature.humidity;
+  humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   //Wind data
   let windElement = document.querySelector("#Wind-value");
-  windElement.innerHTML = response.data.wind.speed;
-  //Time
-  let timeElement = document.querySelector("#current-date");
-  //Parsing the date Sun Mar 17 2024 23:01:02 GMT-0500
-  let date = new Date(response.data.time * 1000);
-  timeElement.innerHTML = response.data.time;
-  timeElement.innerHTML = formatDate(date);
-
+  windElement.innerHTML = `${response.data.wind.speed}Km/h`;
+  //feel-like data
+  let feelsElement = document.querySelector("#Feels-like");
+  feelsElement.innerHTML = response.data.temperature.feels_like;
   console.log(response.data);
-}
-//Function to format date
-function formatDate(date) {
-  let minutes = date.getMinutes();
-  let hours = date.getHours();
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let day = days[date.getDay()];
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-  return `${day} ${hours}:${minutes}`;
+  //icon chnage
+  let icon = document.querySelector("#current-temperature-icon");
+  icon.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon"/>`;
 }
 
 function searchCity(city) {

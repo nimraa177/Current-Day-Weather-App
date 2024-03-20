@@ -1,12 +1,11 @@
 body {
-  height: 100vh;
   background: #f9f7fe;
   font-family: "Roboto", sans-serif;
   background: url("./../img/bdimg.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 a {
@@ -16,10 +15,11 @@ a {
 .weather-app {
   max-width: 1500px;
   margin: 60px auto;
-  padding: 30px;
-  padding-bottom: 227px;
+  padding: 10px;
+  /* padding-bottom: 30px; */
   border-radius: 10px;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+  height: 50vh;
 }
 
 header {
@@ -58,15 +58,24 @@ main {
 }
 
 .current-weather {
-  /* display: flex;
-  justify-content: space-between; */
   background-color: #ffffff78;
   border-radius: 20px;
   padding: 20px;
   padding-bottom: 100px;
   width: 500px;
+  height: 400px;
+  float: left;
 }
-
+.Weather-forecast {
+  background-color: #ffffff78;
+  border-radius: 20px;
+  padding: 20px;
+  padding-bottom: 10px;
+  width: 50rem;
+  height: 200px;
+  float: right;
+  font-weight: bold;
+}
 .current-city {
   font-size: 38px;
   font-weight: 900;
@@ -79,14 +88,6 @@ main {
   font-weight: 400;
   line-height: 24px;
 }
-
-.Humidity-details strong {
-  color: #f65282;
-}
-.wind-details strong {
-  color: #f65282;
-}
-
 .current-temperature-icon {
   position: relative;
   top: -8px;
@@ -106,32 +107,33 @@ main {
   position: relative;
   top: -38px;
 }
-.Weather-details-1 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.Weather-details-2 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
 .Current-date {
   color: black;
   border-radius: 8px;
   padding: 20px 50px 20px 20px;
-  /* margin: 0px 150px 0px 50px; */
-  /* margin-top: 40px; */
   background-color: #ffffff78;
 }
 .current-time {
   color: black;
 }
+.weather-forecast-temperatures {
+  text-align: center;
+  display: flex;
+  margin-top: 10px;
+  color: #c40b42;
+}
+.weather-forecast-temperature {
+  padding: 0 6px;
+}
+.weather-forecast-day {
+  display: block;
+  margin: 5px;
+}
 footer {
   text-align: center;
-  padding-top: 50px;
-
+  padding-top: 8px;
   color: rgba(39, 33, 66, 0.4);
+  clear: both;
 }
 .Footer-details {
   color: azure;
