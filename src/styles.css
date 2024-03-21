@@ -58,23 +58,28 @@ main {
 }
 
 .current-weather {
-  background-color: #ffffff78;
+  background-color: #100e0e9c;
+  color: aliceblue;
   border-radius: 20px;
   padding: 20px;
   padding-bottom: 100px;
   width: 500px;
   height: 400px;
   float: left;
+  box-shadow: inset 0px 1px 28px 0px rgba(255, 252, 255, 1);
 }
 .Weather-forecast {
-  background-color: #ffffff78;
+  background-color: #100e0e9c;
+  color: aliceblue;
   border-radius: 20px;
   padding: 20px;
   padding-bottom: 10px;
-  width: 50rem;
+  display: flex;
+  width: 40rem;
   height: 200px;
   float: right;
   font-weight: bold;
+  box-shadow: inset 0px 1px 35px 1px rgba(255, 252, 255, 0.49);
 }
 .current-city {
   font-size: 38px;
@@ -116,19 +121,19 @@ main {
 .current-time {
   color: black;
 }
-.weather-forecast-temperatures {
+/* .weather-forecast-temperatures {
   text-align: center;
   display: flex;
   margin-top: 10px;
   color: #c40b42;
-}
-.weather-forecast-temperature {
+} */
+/* .weather-forecast-temperature {
   padding: 0 6px;
 }
 .weather-forecast-day {
   display: block;
   margin: 5px;
-}
+} */
 footer {
   text-align: center;
   padding-top: 8px;
